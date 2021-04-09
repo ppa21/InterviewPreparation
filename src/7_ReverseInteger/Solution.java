@@ -5,12 +5,17 @@ class Solution {
 
         while(x != 0) {
             remainder = x % 10;
-            result = result * 10 + remainder;
             x /= 10;
-        }
 
-        if(remainder > Integer.MAX_VALUE || remainder < Integer.MIN_VALUE) {
-            return 0;
+            if(result > Integer.MAX_VALUE / 10 || result == Integer.MAX_VALUE && result > 7) {
+                return 0;
+            }
+
+            if(result < Integer.MIN_VALUE / 10 || result == Integer.MIN_VALUE && result < -8) {
+                return 0;
+            }
+
+            result = result * 10 + remainder;
         }
 
         return result;
