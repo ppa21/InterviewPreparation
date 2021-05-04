@@ -9,7 +9,7 @@ class Solution {
         for(char c : s.toCharArray()) {
             /*
              we check if c is equal to ( or [ or { and
-             then we add its closing bracket AKA ) or ] or }
+             we push its closing bracket AKA ) or ] or } on stack
              */
             if(c == '(') {
                 stack.push(')');

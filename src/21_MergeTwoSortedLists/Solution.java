@@ -64,6 +64,7 @@ class Solution {
                     curr.next = 4 from l2
                                    .
                     l2 = 2 -> 4 -> 6 -> x
+
              Sixth iteration:
                                     .
                 l1 = 1 -> 2 -> 3 -> 5 -> x
