@@ -26,7 +26,7 @@ class Solution {
                     nums[2] = 4
                     nums = [1, 3, 4]
 
-             Iteration 4 won't happen because i == 4 which is not < nums.length.
+             Loop ends here because i will be 4 in the next iteration and 4 is not < nums.length
              But, count = 2 while the answer = 3.
              So, return count + 1
              */
