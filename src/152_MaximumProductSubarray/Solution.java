@@ -46,6 +46,16 @@ class Solution {
                         -2 * -3 = 6
                         * It makes sense to keep track of BOTH *maxProduct* AND *minProduct*
                             * Then, choose the max between those 2
+                    * Also, third option is *n* itself because:
+                        * Consider nums = [-1, 8]
+                            * In this case, currMin and currMax will end up being -1 and either of those numbers multiplied by 8 which could be the n value
+                                * Results in -8
+                                    * -8 is not the currMax in nums
+                                        * However, 8 could be the currMax
+                                            * So, we include n by itself as well in the Math.max and Math.min
+                                                * This is because n could be 8
+                                                    * currMax = Math.max(n * currMax, Math.max(n * currMin, n))
+                                                    * currMin = Math.min(tmp, Math.min(n * currMin, n))
              */
             currMax = Math.max(n * currMax, Math.max(n * currMin, n));
             currMin = Math.min(tmp, Math.min(n * currMin, n));
