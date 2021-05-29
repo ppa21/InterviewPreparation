@@ -16,7 +16,7 @@ class Solution {
         int carry = 0;
         int sum = 0;
         ListNode result = new ListNode();
-        ListNode tempResult = result;
+        ListNode current = result;
 
         while(l1 != null || l2 != null) {
             /* if l1 is not null, extract the value from l1 and move the pointer for l1 to the next element;
@@ -47,13 +47,13 @@ class Solution {
 
             // sum = 2;
             ListNode temp = new ListNode(sum);
-            tempResult.next = temp;
-            tempResult = temp;
+            current.next = temp;
+            current = current.next;
         }
 
         if(carry != 0) {
             ListNode temp = new ListNode(carry);
-            tempResult.next = temp;
+            current.next = temp;
         }
 
         return result.next;
