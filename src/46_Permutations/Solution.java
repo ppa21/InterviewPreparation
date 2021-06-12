@@ -1,4 +1,10 @@
 /*
+    VIP
+        P: Permutations question that uses backtrack method as a technique for solution
+        V: visiting boolean array as a parameter to backtrack method
+        I: if statement at the start of the backtrack method
+
+
     Backtracking problem
         * Use the Backtracking template from my bookmarks
             * Solution is similar to question 17
