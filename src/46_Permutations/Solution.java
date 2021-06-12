@@ -1,7 +1,7 @@
 /*
     VIP
         P: Permutations question that uses backtrack method as a technique for solution
-        V: visiting boolean array as a parameter to backtrack method
+        V: visited boolean array as a parameter to backtrack method
         I: if statement at the start of the backtrack method
 
 
