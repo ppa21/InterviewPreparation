@@ -10,7 +10,7 @@ class Solution {
             return s;
         }
 
-        for(int begin = 0; begin < s.length() - 1; begin++) {
+        for(int begin = 0; begin < s.length(); begin++) {
             /*
              * abcdcba -> string of odd length -> only one middle character -> d
              * -> move outwards in both directions from d
