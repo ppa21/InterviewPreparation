@@ -1,0 +1,33 @@
+class Solution {
+    /*
+            Runtime Complexity:     O(n * n)
+            Space Complexity:       O(1)
+     */
+    public void rotate(int[][] matrix) {
+        int N = matrix.length;
+
+        /*
+                * The idea is to transpose a matrix and then flip it horizontally
+                    1) Transpose of a matrix
+                    2) Flip the matrix horizontally
+         */
+
+        // 1) Transpose of a matrix
+        for(int i = 0; i < N; i++) {
+            for(int j = i; j < N; j++) {
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = tmp;
+            }
+        }
+
+        // 2) Flip the matrix horizontally
+        for(int i = 0; i < N; i++) {
+            for(int j = 0; j < N / 2; j++) {
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[i][N - 1 - j];
+                matrix[i][N - 1 - j] = tmp;
+            }
+        }
+    }
+}
