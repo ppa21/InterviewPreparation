@@ -14,12 +14,16 @@
  * }
  */
 class Solution {
+    /*
+            * Time Complexity:      O(M * N) ---> M = number of nodes in root, N = number of nodes in subRoot
+            * Space Complexity:     O(min(M, N)) ---> The limiting factor of how deep our recursion goes depends on whichever tree has less nodes
+     */
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         if(root == null) {
             return false;
-        } else if(isSameTree(root, subRoot)) {      // for the level we're on, does subRoot appear in root?
+        } else if(isSameTree(root, subRoot)) {   // for the level we're on, does subRoot appear in root?
             return true;
-        } else {        // move to the next level, and ask the same question
+        } else {                                 // move to the next level, and ask the same question
             return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
         }
     }
