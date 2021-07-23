@@ -9,6 +9,14 @@
  */
 public class Codec {
 
+    /*
+            * Time Complexity: O(n + m) ---> n = number of nodes, m = number of edges ---> O(n)
+                * Preorder traversal (DFS)
+                    * Visiting each node and edge ESSENTIALLY once
+                        * O(n)
+            * Space Complexity: O(n + m) ---> O(n) ---> Because of the QUEUE
+     */
+
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
         if(root == null) {
