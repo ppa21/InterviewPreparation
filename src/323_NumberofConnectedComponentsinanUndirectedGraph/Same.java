@@ -6,7 +6,7 @@ class Solution {
             ids[i] = i;
         }
 
-        for(int [] edge : edges) {
+        for(int[] edge : edges) {
             union(edge[0], edge[1], ids);
         }
 
