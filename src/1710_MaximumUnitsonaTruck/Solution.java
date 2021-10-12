@@ -1,7 +1,7 @@
 class Solution {
     /*
-            Time Complexity: O(n)
-            Space Complexity: O(n)
+            Time Complexity: O(nlogn)
+            Space Complexity: O(1)
      */
     public int maximumUnits(int[][] boxTypes, int truckSize) {
         Arrays.sort(boxTypes, (a, b) -> b[1] - a[1]);
