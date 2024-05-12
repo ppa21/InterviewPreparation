@@ -3,6 +3,13 @@
         left < right
             THIS
             153. Find Minimum in Rotated Sorted Array
+        if target < nums[middle]
+            right = middle - 1;
+            SAME
+                timestamp < list.get(middle).timestamp
+                    right = middle - 1
+            ALSO
+                return timestamp < data.timestamp
 
     time complexity  = set: O(1), get: O(logn)
     space complexity = set: O(n), get: O(1)
@@ -41,7 +48,7 @@ class TimeMap {
         while (left < right) {
             int middle = (left + right + 1) / 2;
 
-            if (list.get(middle).timestamp > timestamp) {
+            if (timestamp < list.get(middle).timestamp) {
                 right = middle - 1;
             } else {
                 left = middle;
@@ -49,7 +56,7 @@ class TimeMap {
         }
 
         Data closestData = list.get(left);
-        return closestData.timestamp > timestamp ? "" : closestData.value;
+        return timestamp < closestData.timestamp ? "" : closestData.value;
     }
 
     class Data {
