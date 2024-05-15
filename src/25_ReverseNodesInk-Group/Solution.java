@@ -43,7 +43,7 @@ class Solution {
 
                 // Check if there are enough nodes left for the next group
                 ListNode end = curr;
-                for (int i = 0; i < k; ++i) {
+                for (int i = 0; i < k; i++) {
                     if (end == null) {
                         // If not enough nodes left, return the head of the reversed list
                         return dummy.next; 
