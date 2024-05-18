@@ -15,12 +15,12 @@ public class Solution {
         int nums2Length = nums2.length; // nums2Length = 2
 
         // Binary search on the smaller array.
-        int start = 0;
-        int end = nums1Length;
+        int left = 0;
+        int right = nums1Length;
 
-        while (start <= end) {
+        while (left <= right) {
             // The point where we partition nums1. Initially, partitionNums1 = 0
-            int partitionNums1 = (start + end) / 2; 
+            int partitionNums1 = (left + right) / 2; 
             /* 
                 The point where we partition nums2. Initially, partitionNums2 = 2
                 We subtract partitionNums1 to ensure that the total number of elements on the left side of the partition
@@ -48,9 +48,9 @@ public class Solution {
                     return (double) Math.max(maxLeftNums1, maxLeftNums2); // Returns 1 as the median; ODD CASE
                 }
             } else if (maxLeftNums1 > minRightNums2) { // We are too far on right side for partitionNums1. Go on left side.
-                end = partitionNums1 - 1;
+                right = partitionNums1 - 1;
             } else { // We are too far on left side for partitionNums1. Go on right side.
-                start = partitionNums1 + 1;
+                left = partitionNums1 + 1;
             }
         }
 
