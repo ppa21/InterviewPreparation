@@ -33,8 +33,8 @@ class Solution {
 
         int result = root.val >= max ? 1 : 0;
         max = Math.max(max, root.val);
-        result += dfs(root.left, Math.max(root.val, max));
-        result += dfs(root.right, Math.max(root.val, max));
+        result += dfs(root.left, max);
+        result += dfs(root.right, max);
 
         return result;
     }
