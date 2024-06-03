@@ -12,8 +12,6 @@ class Solution {
         rightMax = [3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 1, 0]
     */
     public int trap(int[] height) {
-        int left = 0;
-        int right = height.length - 1;
         int[] leftMax = new int[height.length];
         int[] rightMax = new int[height.length];
 
