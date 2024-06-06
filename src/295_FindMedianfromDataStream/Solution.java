@@ -44,7 +44,6 @@ class MedianFinder {
         if(small.size() - large.size() >= 2) {
             int val = small.poll();
             large.add(val);
-            return;
         }
 
         // SAME explanation as ABOVE
