@@ -19,8 +19,6 @@ public class Solution {
      * @return: true if it's a valid tree, or false
      */
     public boolean validTree(int n, int[][] edges) {
-        // write your code here
-
         if(n <= 0) {
             return true;
         }
