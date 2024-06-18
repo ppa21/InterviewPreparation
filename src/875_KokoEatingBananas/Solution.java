@@ -5,7 +5,7 @@ class Solution {
      */
     public int minEatingSpeed(int[] piles, int h) {
         // Initalize the left and right boundaries
-        int left = 1;
+        int left = 0;
         int right = 1; // max speed will be max number in piles i.e. how many bananas can be eaten at max in an hr
         for (int pile : piles) {
             right = Math.max(right, pile);
