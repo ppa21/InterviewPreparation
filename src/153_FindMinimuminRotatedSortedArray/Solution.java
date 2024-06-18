@@ -4,10 +4,9 @@ class Solution {
         int right = nums.length - 1;
 
         /*
-              threeSum: left < right
-              usual BS: left <= right
-
-              This BS: left < right
+              * EXCEPTION to BS: 
+                  * This BS: left < right
+                  * usual BS: left <= right
          */
         while(left < right) {
             // ideal way to find middle
