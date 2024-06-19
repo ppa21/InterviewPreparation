@@ -39,6 +39,7 @@ class Solution {
                 for (int i = 0; i < s.length(); i++) {
                     StringBuilder pattern = new StringBuilder(s);
                     pattern.setCharAt(i, '*');
+                    
                     for (String word : adjlist.get(pattern.toString())) {
                         if (word.equals(endWord)) {
                             return step;
