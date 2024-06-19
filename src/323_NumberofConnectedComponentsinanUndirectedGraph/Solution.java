@@ -1,5 +1,9 @@
 class Solution {
     /*
+            * Another UNION-FIND algorithm question
+                * SIMILAR TO:
+                    * 684. Redundant Connection 
+            
             * Time Complexity: O(N + MlogN)
                 * M = # of edges
                 * N = # of nodes
