@@ -33,6 +33,7 @@ class Solution {
         while (!queue.isEmpty()) {
             step++;
             int size = queue.size();
+            
             for (int j = 0; j < size; j++) {
                 String s = queue.poll();
 
@@ -44,9 +45,11 @@ class Solution {
                         if (word.equals(endWord)) {
                             return step;
                         }
+                        
                         if (visited.contains(word)) {
                             continue;
                         }
+                        
                         queue.offer(word);
                         visited.add(word);
                     }
