@@ -1,6 +1,8 @@
 class Solution {
     /*
         * Another UNION-FIND algorithm question
+            * SIMILAR TO:
+                * 323. Number of Connected Components in an Undirected Graph
         
         * Time Complexity  = O(n)
         * Space Complexity = O(n)
