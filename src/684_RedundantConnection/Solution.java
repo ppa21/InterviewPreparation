@@ -1,5 +1,7 @@
 class Solution {
     /*
+        * Another UNION-FIND algorithm question
+        
         * Time Complexity  = O(n)
         * Space Complexity = O(n)
     */ 
