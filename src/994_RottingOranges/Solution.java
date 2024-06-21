@@ -30,6 +30,7 @@ class Solution {
         
         // Process until all reachable fresh oranges are rotten
         while (!rotten.isEmpty()) {
+            minutes++; // Increment the time after processing this level
             int size = rotten.size(); // Number of rotten oranges to process at this minute
 
             for (int i = 0; i < size; i++) { // Process all rotten oranges for this minute
@@ -48,8 +49,6 @@ class Solution {
                     }
                 }
             }
-
-            minutes++; // Increment the time after processing this level
         }
         
         // If there are still fresh oranges left, return -1, otherwise return the time taken
