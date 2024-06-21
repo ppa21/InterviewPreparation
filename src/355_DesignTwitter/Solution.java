@@ -1,9 +1,11 @@
 /*
+   * count = timestamp
+
     * Time Complexity  = O(nlogn); n = number of followees for the user
     * Space Complexity = O(tuf); t = total number of tweets; u = number of users; f = total number of follow relationships
 */
 class Twitter {
-  int count;
+  int count;   // count is timestamp
   HashMap<Integer, List<int[]>> tweetMap;
   HashMap<Integer, HashSet<Integer>> followerMap;
 
