@@ -1,5 +1,15 @@
 class Solution {
     /*
+        * When I do cols in for loop, cols stay consistent
+            * c is consistent since it's cols
+                * board[0][c]
+                * board[rows - 1][c]
+        * When I do rows in for loop, rows stay consistent
+            * r is consistent since it's rows
+                * board[r][0]
+                * board[r][cols - 1]
+        
+    
         * Time Complexity  = O(nm)
         * Space Complexity = O(nm)
     */
