@@ -16,17 +16,28 @@ class Solution {
         Stack<String> stack = new Stack<>();    // Stack to store the current path
 
         for (List<String> ticket : tickets) {
-            String departure = ticket.get(0);
-            String destination = ticket.get(1);
+            String departure = ticket.get(0); // current
+            String destination = ticket.get(1); // next = target
 
-            PriorityQueue<String> destinations = graph.get(departure);
-
-            if (destinations == null) {
-                destinations = new PriorityQueue<>();
-                graph.put(departure, destinations);
+            if (!graph.containsKey(departure)) {
+                PriorityQueue<String> pq = new PriorityQueue<>();
+                pq.add(destination);
+                graph.put(departure, pq);
+            } else {
+                graph.get(departure).add(destination);
             }
 
-            destinations.add(destination);
+            /*
+                ALTERNATE WAY
+            */
+            // PriorityQueue<String> destinations = graph.get(departure);
+
+            // if (destinations == null) {
+            //     destinations = new PriorityQueue<>();
+            //     graph.put(departure, destinations);
+            // }
+
+            // destinations.add(destination);
         }
 
         stack.push("JFK");  // Start the journey from JFK
