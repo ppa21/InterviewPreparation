@@ -4,7 +4,7 @@
 */
 class Solution {
     public List<String> findItinerary(List<List<String>> tickets) {
-        LinkedList<String> itinerary = new LinkedList<>();
+        List<String> itinerary = new LinkedList<>();
         
         /*
             * tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
@@ -32,11 +32,11 @@ class Solution {
         stack.push("JFK");  // Start the journey from JFK
 
         while (!stack.isEmpty()) {
-            // Peek the next airport to visit
-            String nextDestination = stack.peek();
+            // Peek the current airport
+            String currentAirport = stack.peek();
 
             // Get the priority queue of the next destination from the graph
-            PriorityQueue<String> destinations = graph.get(nextDestination);
+            PriorityQueue<String> destinations = graph.get(currentAirport);
 
             // If the priority queue is empty or does not exist
             if (destinations == null || destinations.isEmpty()) {
