@@ -35,7 +35,7 @@ class Solution {
             // Peek the current airport
             String currentAirport = stack.peek();
 
-            // Get the priority queue of the next destination from the graph
+            // Get the priority queue airports that can be visited from currentAirport
             PriorityQueue<String> destinations = graph.get(currentAirport);
 
             // If the priority queue is empty or does not exist
