@@ -11,7 +11,7 @@ class Solution {
             * Adjacency list:
                 * {JFK: {ATL, SFO}, ATL: {JFK, SFO}, SFO: {ATL}}
         */
-        Map<String, PriorityQueue<String>> graph = new HashMap<>();
+        Map<String, PriorityQueue<String>> graph = new HashMap<>();   // adjacency list
 
         Stack<String> stack = new Stack<>();    // Stack to store the current path
 
