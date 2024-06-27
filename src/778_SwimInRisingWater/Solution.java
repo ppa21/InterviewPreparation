@@ -18,16 +18,16 @@ class Solution {
 
         /*
             * Min heap to determine the next cell to visit based on elevation
-            * Integer[] = (E, x, y); E = elevation at the current cell; x = x coordinate of the current cell; y = y coordinate of the current cell
+            * int[] = (E, x, y); E = elevation at the current cell; x = x coordinate of the current cell; y = y coordinate of the current cell
         */
-        PriorityQueue<Integer[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]);
-        minHeap.add(new Integer[] { grid[0][0], 0, 0 });    // Add the starting cell to the min heap
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+        minHeap.add(new int[] { grid[0][0], 0, 0 });    // Add the starting cell to the min heap
 
         // 'result' will store the minimum time to reach the end
         int result = 0;
 
         while (!minHeap.isEmpty()) {
-            Integer[] curr = minHeap.poll();
+            int[] curr = minHeap.poll();
 
             /* 
                 * Update 'result' with the maximum elevation we've encountered
@@ -51,7 +51,7 @@ class Solution {
                 }
 
                 // Add the new cell to the min heap and mark it as visited
-                minHeap.add(new Integer[] { grid[x][y], x, y });
+                minHeap.add(new int[] { grid[x][y], x, y });
                 seen[x][y] = true;
             }
         }
