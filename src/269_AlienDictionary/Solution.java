@@ -1,71 +1,76 @@
+/*
+    * Time Complexity  = O(n); n = total length of all the words combined; ["wrt", "wrf", "er", "ett", "rftt"] = 15 = n
+    * Space Complexity = O(n); amount of space required by the algorithm grows linearly with the size of the input
+*/
 public class Solution {
-    /**
-     * @param words: a list of words
-     * @return: a string which is correct order
-     */
+    private Map<Character, Set<Character>> adj = new HashMap<>(); // adjacency list
+    private Map<Character, Boolean> visited = new HashMap<>(); // visited nodes
+    private List<Character> result = new ArrayList<>();
 
-    /*
-            * Time Complexity: O(NM)
-                * N = length of words[]
-                * M = length of the largest word in words[]
-            * Space Complexity: O(N)
-     */
-    public String alienOrder(String[] words) {
-        // Write your code here
-        int[] indegree = new int[26];
-        Map<Character, List<Character>> graph = new HashMap();
-
-        for(String word : words) {
-            for(char c : word.toCharArray()) {
-                graph.put(c, new ArrayList());
+    public String foreignDictionary(String[] words) {
+        // Initialize adjacency list
+        for (String word : words) {
+            for (char c : word.toCharArray()) {
+                if (!adj.containsKey(c)) {
+                    adj.put(c, new HashSet<>());
+                }
             }
         }
 
-        // ["wrt","wrf","er","ett","rftt"]
-        for(int i = 0; i < words.length - 1; i++) {
-            String start = words[i];        // wrt
-            String end = words[i + 1];      // wrf
-
-            if(start.length() > end.length() && start.startsWith(end)) {
+        // Build adjacency list
+        for (int i = 0; i < words.length - 1; i++) {
+            String w1 = words[i];     // w1 = "wrt"
+            String w2 = words[i + 1]; // w2 = "wrf"
+            int minLen = Math.min(w1.length(), w2.length()); // e.g., minLen=3
+            
+            /*
+                * If w1 is longer than w2 and they share the same prefix, it's an invalid scenario.
+                * For example, w1="wrt", w2="wr", it's invalid because "wrt" should come after "wr" in the dictionary.
+            */
+            if (w1.length() > w2.length() && w1.substring(0, minLen).equals(w2.substring(0, minLen))) {
                 return "";
             }
-
-            int len = Math.min(start.length(), end.length());       // min(3, 3) -> 3
-            for(int j = 0; j < len; j++) {
-                char startChar = start.charAt(j);       // same wr -> difference: t
-                char endChar = end.charAt(j);           // same wr -> difference: f
-
-                if(startChar != endChar) {              // t != f
-                    graph.get(startChar).add(endChar);  // t -> f
-                    indegree[endChar - 'a']++;          // indegree[5] = 1
-
+            
+            for (int j = 0; j < minLen; j++) {
+                if (w1.charAt(j) != w2.charAt(j)) { // e.g., 't' != 'f'
+                    adj.get(w1.charAt(j)).add(w2.charAt(j)); // Add 'f' to the adjacency list of 't'
                     break;
                 }
             }
         }
 
+        // DFS
+        for (char c : adj.keySet()) {
+            if (dfs(c)) {
+                return "";
+            }
+        }
+
+        // Reverse result list and convert to string
+        Collections.reverse(result);
         StringBuilder sb = new StringBuilder();
-        Queue<Character> q = new LinkedList();
+        for (char c : result) {
+            sb.append(c);
+        }
+        
+        return sb.toString(); // e.g., "wertf"
+    }
 
-        for(char c : graph.keySet()) {
-            if(indegree[c - 'a'] == 0) {
-                q.add(c);
+    private boolean dfs(char c) {
+        if (visited.containsKey(c)) {
+            return visited.get(c); // if this node was visited, return its status
+        }
+
+        visited.put(c, true); // mark as visited
+
+        for (char next : adj.get(c)) {
+            if (dfs(next)) {
+                return true; // return true if a cycle is detected
             }
         }
 
-        while(!q.isEmpty()) {
-            char startChar = q.poll();
-            sb.append(startChar);
-
-            for(char endChar : graph.get(startChar)) {
-                indegree[endChar - 'a']--;
-
-                if(indegree[endChar - 'a'] == 0) {
-                    q.add(endChar);
-                }
-            }
-        }
-
-        return sb.length() == graph.size() ? sb.toString() : "";
+        visited.put(c, false); // remove from visited, indicating that all descendants have been visited and no cycle is detected
+        result.add(c); // add to result list
+        return false; // return false to indicate that no cycle is detected
     }
 }
