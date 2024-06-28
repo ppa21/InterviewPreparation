@@ -41,6 +41,7 @@ public class Solution {
 
         // DFS
         for (char c : adj.keySet()) {
+            // if there is a cycle, return empty string ""
             if (dfs(c)) {
                 return "";
             }
