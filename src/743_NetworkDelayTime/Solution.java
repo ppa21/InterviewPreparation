@@ -19,8 +19,13 @@ class Solution {
                 int target = times[j][1]; 
                 int time = times[j][2];
 
+                // if the source path hasn't been visited yet, skip this path
+                if (temp[source - 1] == Integer.MAX_VALUE) {
+                    continue;
+                }
+
                 // If the source node's time is known and the target can be reached quicker through the source
-                if (temp[source - 1] != Integer.MAX_VALUE && temp[source - 1] + time < temp[target - 1]) {
+                if (temp[source - 1] + time < temp[target - 1]) {
                     // Update the target node's time in 'temp'
                     temp[target - 1] = temp[source - 1] + time;
                 }
