@@ -6,7 +6,7 @@ class Solution {
         * Space Complexity = O(N^2)
     */
     public int minCostConnectPoints(int[][] points) {
-        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]); // a = edge weight; b = index of the current node
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]); // INDEX 0 = edge weight; INDEX 1 = index of the current node
         minHeap.offer(new int[] { 0, 0 });
 
         Set<Integer> visited = new HashSet<>(); // so we don't visit a node twice (THIS CREATES A LOOP)
