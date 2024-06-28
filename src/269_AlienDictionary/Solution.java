@@ -39,7 +39,7 @@ public class Solution {
             }
         }
 
-        // DFS
+        // Post-order DFS
         for (char c : adj.keySet()) {
             // if there is a cycle, return empty string ""
             if (dfs(c)) {
@@ -57,6 +57,7 @@ public class Solution {
         return sb.toString(); // e.g., "wertf"
     }
 
+    // Post-order DFS
     private boolean dfs(char c) {
         if (visited.containsKey(c)) {
             return visited.get(c); // if this node was visited, return its status
