@@ -1,11 +1,14 @@
 public class Solution {
     /*
+        * SORTA SIMILAR TO:
+            * 494. Target Sum
+        
         * Time Complexity  = O(n * sum); n = size of nums
         * Space Complexity = O(sum)
     */
     public boolean canPartition(int[] nums) {
         // Calculate the sum of all elements in the array
-        int sum = Arrays.stream(nums).sum();
+        int sum = Arrays.stream(nums).sum();    // SIMILAR TO 494. Target Sum
 
         // If the sum is odd, it's impossible to partition the array into two equal subsets
         if (sum % 2 != 0) {
@@ -13,12 +16,13 @@ public class Solution {
         }
 
         // The target sum for each subset is half of the total sum
-        int target = sum / 2;
+        int target = sum / 2;    // SIMILAR TO 494. Target Sum
 
         // Initialize a boolean array dp where dp[i] will be 'true' if there exists a subset whose sum is i
         boolean[] dp = new boolean[target + 1];
         dp[0] = true; // There is always an empty set with sum 0
 
+        // LOOP SORTA SIMILAR TO 494. Target Sum
         for (int n : nums) {
             // Iterate from the target down to the current number
             for (int i = target; i >= n; i--) {
