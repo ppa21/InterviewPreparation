@@ -31,11 +31,11 @@ class Solution {
         dp[0] = 1;  // There is one way to reach the sum 0: by taking no numbers
         
         // For each number in nums
-        for (int num : nums) {
-            // For each sum from newTarget to num (inclusive)
-            for (int i = newTarget; i >= num; i--) {
-                // Add the number of ways to reach the sum i - num to dp[i]
-                dp[i] += dp[i - num];
+        for (int n : nums) {
+            // For each sum from newTarget to n (inclusive)
+            for (int i = newTarget; i >= n; i--) {
+                // Add the number of ways to reach the sum i - n to dp[i]
+                dp[i] += dp[i - n];
             }
         }
         
