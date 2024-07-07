@@ -1,14 +1,14 @@
 class Solution {
     /*
+        * SORTA SIMILAR TO:
+            * 416. Partition Equal Subset Sum
+    
         * Time Complexity  = O(n * newTarget); n = size of nums; newTarget = (sum + target) / 2;
         * Space Complexity = O(newTarget); dp size
     */
     public int findTargetSumWays(int[] nums, int target) {
         // Calculate the sum of all numbers
-        int sum = 0;
-        for (int num : nums) {
-            sum += num;
-        }
+        int sum = Arrays.stream(nums).sum();    // SIMILAR TO 416. Partition Equal Subset Sum
 
         /*
             * sum < Math.abs(target)
@@ -24,12 +24,13 @@ class Solution {
         }
         
         // This transforms the problem into a subset sum problem so instead of finding TARGET, we find NEWTARGET since it takes SUM into account and you'd already have SUM from NUMS
-        int newTarget = (sum + target) / 2;
+        int newTarget = (sum + target) / 2;    // SIMILAR TO 416. Partition Equal Subset Sum
         
         // dp[i] will store the number of ways to reach the sum i
         int[] dp = new int[newTarget + 1];
         dp[0] = 1;  // There is one way to reach the sum 0: by taking no numbers
-        
+
+        // LOOP SORTA SIMILAR TO 416. Partition Equal Subset Sum
         // For each number in nums
         for (int n : nums) {
             // For each sum from newTarget to n (inclusive)
