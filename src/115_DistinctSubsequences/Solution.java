@@ -16,14 +16,18 @@ public class Solution {
 
         for (int i = 1; i <= s.length(); i++) {
             for (int j = 1; j <= t.length(); j++) {
-                // If the current characters match, we have two options:
-                // 1) include this character match and move to the previous character in both strings
-                // 2) exclude this character match and move to the previous character in s
+                // If the current characters in s and t match (s.charAt(i - 1) == t.charAt(j - 1)), 
+                // we have two scenarios:
+                 // 1) dp[i - 1][j - 1]: We include the current character match and consider the number of distinct 
+                 //    subsequences found so far without the current character. This forms new distinct subsequences.
+                 // 2) dp[i - 1][j]: We exclude the current character match in s and consider the number of distinct 
+                 //    subsequences found so far. This allows us to continue exploring other characters in s for potential matches.
+                 // The total number of distinct subsequences is the sum of the counts from these two scenarios.
                 if (s.charAt(i - 1) == t.charAt(j - 1)) {
                     // when i = 1 and j = 1, s.charAt(i - 1) = 'a' and t.charAt(j - 1) = 'a', so they match
                     dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
                 } else {
-                    // If the current characters don't match, we can only move to the previous character in s
+                    // If the current characters don't match, we can only move to the previous character in s and go to the previous sub-problem in s
                     // when i = 1 and j = 2, s.charAt(i - 1) = 'a' and t.charAt(j - 1) = 'b', so they don't match
                     dp[i][j] = dp[i - 1][j];
                 }
