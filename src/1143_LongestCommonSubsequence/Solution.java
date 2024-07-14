@@ -6,8 +6,8 @@ class Solution {
             If I start at i = 0 AND j = 0
                 * lines 12, 13 and 15 -> WILL GO OUT OF BOUNDS
          */
-        for(int i = 1; i < dp.length; i++) {
-            for(int j = 1; j < dp[i].length; j++) {
+        for(int i = 1; i <= text1.length(); i++) {
+            for(int j = 1; j <= text2.length(); j++) {
                 if(text1.charAt(i - 1) == text2.charAt(j - 1)) {
                     dp[i][j] = 1 + dp[i - 1][j - 1];
                 } else {
