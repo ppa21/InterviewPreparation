@@ -14,7 +14,7 @@ class Solution {
             start from the smallest card and check for consecutive cards. 
             A HashMap does not maintain any order of its keys.
         */
-        TreeMap<Integer, Integer> map = new TreeMap<>(); 
+        TreeMap<Integer, Integer> map = new TreeMap<>();    // key = card; value = count of card
         for (int card: hand) {
             map.put(card, map.getOrDefault(card, 0) + 1);
         }
