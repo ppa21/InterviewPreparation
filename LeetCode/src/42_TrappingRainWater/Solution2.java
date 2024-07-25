@@ -23,11 +23,11 @@ class Solution {
             if (leftMax < rightMax) {
                 left++;
                 leftMax = Math.max(leftMax, height[left]);
-                result += leftMax - height[left];
+                result = result + leftMax - height[left];
             } else {
                 right--;
                 rightMax = Math.max(rightMax, height[right]);
-                result += rightMax - height[right];
+                result = result + rightMax - height[right];
             }
         }
 
