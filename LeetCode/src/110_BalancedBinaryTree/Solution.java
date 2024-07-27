@@ -20,25 +20,25 @@
     * Space Complexity = O(n)
  */
 class Solution {
-    private int height(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-
-        int left = height(root.left);
-        int right = height(root.right);
-
-        return Math.max(left, right) + 1;
-    }
-
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
         }
 
-        int left = height(root.left);
-        int right = height(root.right);
+        int left = dfs(root.left);
+        int right = dfs(root.right);
 
         return Math.abs(left - right) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+    }
+
+    private int dfs(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int left = dfs(root.left);
+        int right = dfs(root.right);
+
+        return Math.max(left, right) + 1;
     }
 }
