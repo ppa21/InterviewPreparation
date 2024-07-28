@@ -1,16 +1,14 @@
 /*
-   * count = timestamp
-
     * Time Complexity  = O(nlogn); n = number of followees for the user
     * Space Complexity = O(tuf); t = total number of tweets; u = number of users; f = total number of follow relationships
 */
 class Twitter {
-  int count;   // count is timestamp
+  int timestamp;
   HashMap<Integer, List<int[]>> tweetMap;
   HashMap<Integer, HashSet<Integer>> followerMap;
 
   public Twitter() {
-    count = 0;
+    timestamp = 0;
     tweetMap = new HashMap<>();
     followerMap = new HashMap<>();
   }
@@ -20,8 +18,8 @@ class Twitter {
       tweetMap.put(userId, new ArrayList<>());
     }
 
-    tweetMap.get(userId).add(new int[]{count, tweetId});
-    count++;
+    tweetMap.get(userId).add(new int[]{timestamp, tweetId});
+    timestamp++;
   }
 
   public List<Integer> getNewsFeed(int userId) {
