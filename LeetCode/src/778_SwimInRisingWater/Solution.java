@@ -41,9 +41,9 @@ class Solution {
             }
 
             // Explore all possible directions from the current cell
-            for (int i = 0; i < 4; i++) {
-                int x = curr[1] + dirs[i][0];
-                int y = curr[2] + dirs[i][1];
+            for (int[] dir : dirs) {
+                int x = curr[1] + dir[0];
+                int y = curr[2] + dir[1];
 
                 // Check if the new cell is within bounds and not yet visited
                 if (x < 0 || x >= length || y < 0 || y >= length || seen[x][y]) {
