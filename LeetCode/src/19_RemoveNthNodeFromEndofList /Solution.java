@@ -10,11 +10,11 @@
  */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummy = new ListNode(-1);
-        dummy.next = head;
+        ListNode result = new ListNode(-1);
+        result.next = head;
 
-        ListNode slow = dummy;
-        ListNode fast = dummy;
+        ListNode slow = result;
+        ListNode fast = result;
 
         // advances fast pointer so that the gap between fast and slow is n nodes apart
         for(int i = 0; i <= n; i++) {
@@ -33,6 +33,6 @@ class Solution {
          */
         slow.next = slow.next.next;
 
-        return dummy.next;
+        return result.next;
     }
 }
