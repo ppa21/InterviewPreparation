@@ -31,7 +31,7 @@ class Solution {
             return 0;
         }
 
-        int result = root.val >= max ? 1 : 0;
+        int result = root.val >= max ? 1 : 0;    // root.val = curr
         max = Math.max(max, root.val);
         result += dfs(root.left, max);
         result += dfs(root.right, max);
