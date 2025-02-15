@@ -77,6 +77,7 @@ class Twitter {
       HashSet<Integer> set = followerMap.get(followerId);
       set.remove(followeeId);
       followerMap.put(followerId, set);
+      // followerMap.get(followerId).remove(followeeId);
     }
   }
 }
