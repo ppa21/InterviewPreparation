@@ -20,7 +20,7 @@ class KthLargest {
     public int add(int val) {
         if (minHeap.size() < k) {
             minHeap.add(val);
-        } else if (val > minHeap.peek()) {
+        } else if (val > minHeap.peek()) {   // ex: if your high score (val) is greater than your lowest high score (minHeap.peek()) and you can only keep k high scores, remove your lowest high score (minHeap.poll())
             minHeap.poll();
             minHeap.add(val);
         }
