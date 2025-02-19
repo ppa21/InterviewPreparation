@@ -8,7 +8,7 @@ class Solution {
         }
 
         dp[0] = true;   // Base case because by default, every element in dp is false.
-        for(int i = 0; i <= n; i++) {
+        for(int i = 0; i <= s.length(); i++) {
             for(int j = 0; j < i; j++) {
                 /*
                  * i - j is the length of an invalid word
