@@ -1,7 +1,6 @@
 class Solution {
     public boolean wordBreak(String s, List<String> wordDict) {
-        int n = s.length();
-        boolean[] dp = new boolean[n + 1];
+        boolean[] dp = new boolean[s.length() + 1];
 
         int maxWordLength = 0;
         for(String word : wordDict) {
