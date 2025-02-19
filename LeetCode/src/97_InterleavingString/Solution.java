@@ -17,8 +17,8 @@ class Solution {
         dp[s1.length()][s2.length()] = true;
 
         // Start from the bottom right corner of the dp table and fill it up.
-        for (int i = dp.length - 1; i >= 0; i--) {
-            for (int j = dp[0].length - 1; j >= 0; j--) {
+        for (int i = s1.length(); i >= 0; i--) {
+            for (int j = s2.length(); j >= 0; j--) {
                 // If we are not at the end of s1, check the following:
                 if (i < s1.length()) {
                     // Check if the current character in s1 is the same as the character in s3 at the combined position of i and j.
