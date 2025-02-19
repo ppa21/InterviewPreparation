@@ -29,6 +29,6 @@ class Solution {
             }
         }
 
-        return dp[n];
+        return dp[s.length()];
     }
 }
