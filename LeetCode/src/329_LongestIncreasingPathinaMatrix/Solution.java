@@ -28,7 +28,7 @@ class Solution {
     private int dfs(int[][] matrix, int[][] dp, int i, int j) {
         // check if we've visited this position before
         // MEMOIZATION
-        if (dp[i][j] > 0) {
+        if (dp[i][j] > 0) {   // dp[i][j] != 0
             return dp[i][j];
         }
 
