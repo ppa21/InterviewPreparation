@@ -19,7 +19,7 @@ class Solution {
                             * CAN'T ADD THE SAME NUMBER MORE THAN ONCE UNLESS IT'S ALREADY PRESENT IN THE ARRAY MULTIPLE TIMES
             * (sum + target) % 2 == 1 --> if this is odd, (sum + target) / 2 will be fractional and you won't be able to find INTEGERS
         */
-        if (sum < Math.abs(target) || (sum + target) % 2 == 1) {
+        if (sum < Math.abs(target) || (sum + target) % 2 != 0) {
             return 0;
         }
         
