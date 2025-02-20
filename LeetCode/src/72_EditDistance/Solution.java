@@ -12,12 +12,12 @@ class Solution {
             for (int j = 0; j <= word2.length(); j++) {
                 // If the first string is empty, we need to perform 'j' insertions to match the second string
                 if (i == 0) {
-                    dp[i][j] = j;
+                    dp[0][j] = j;
                 }
 
                 // If the second string is empty, we need to perform 'i' deletions to match the first string
                 else if (j == 0) {
-                    dp[i][j] = i;
+                    dp[i][0] = i;
                 }
 
                 // If the current characters of both strings are the same, the minimum edit distance doesn't change
