@@ -1,3 +1,3 @@
-# Interview Preparation content
+# Interview Preparation
 * LeetCode
 * System Design
