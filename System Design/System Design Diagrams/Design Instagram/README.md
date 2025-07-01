@@ -1,1 +1,1 @@
-![image1](images/System%20Design%20Diagram.png)
+![image1](images/Screenshot%202025-07-01%20020312.png)
