@@ -1,3 +1,3 @@
 # Interview Preparation
-* LeetCode
-* System Design
+* [LeetCode](./LeetCode/src/)
+* [System Design](./System%20Design/)
