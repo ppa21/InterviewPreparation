@@ -1,1 +1,0 @@
-![image1](./images/Screenshot%202025-07-03%20231356.png)
