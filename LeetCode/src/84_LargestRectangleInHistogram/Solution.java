@@ -21,7 +21,12 @@ class Solution {
                  * We then update the maximum area if necessary.
                  */
                 int height = heights[stack.pop()];
+
+                // no left barrier so rectangle can extend all the way to position 0 
+                // : 
+                //stack not empty meaning rectangle squeezed between 2 barriers so calculate space between them
                 int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+
                 int area = height * width;
                 maxArea = Math.max(maxArea, area);
             }
