@@ -1,7 +1,7 @@
 class Solution {
     /*
             * Time Complexity:      O(2N + M) ---> O(N + M) ---> N = s.lenght(), M = t.length()
-            * Space Complexity:     O(M) ---> M = t.length() ---> HashMap.size()
+            * Space Complexity:     O(M) ---> M = t.length() ---> HashMap.size() == CONSTANT TIME O(1)
      */
     public String minWindow(String s, String t) {
         if(s == null || s.isEmpty() || t == null || t.isEmpty()) {
