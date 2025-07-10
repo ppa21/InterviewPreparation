@@ -8,7 +8,7 @@ class Solution {
             return "";
         }
 
-        Map<Character, Integer> map = new HashMap();
+        Map<Character, Integer> map = new HashMap();    // think of map as a SHOPPING LIST <item, count of item needed>
         for(int i = 0; i < t.length(); i++) {
             char c = t.charAt(i);
             map.put(c, map.getOrDefault(c, 0) + 1);
@@ -25,13 +25,15 @@ class Solution {
         while(j < s.length()) {
             char endChar = s.charAt(j);
             j++;
-            if(map.containsKey(endChar)) {
-                map.put(endChar, map.get(endChar) - 1);
-                if(map.get(endChar) == 0) {
-                    count--;
+            
+            if(map.containsKey(endChar)) {                    // if the shopping list contains this item we need
+                map.put(endChar, map.get(endChar) - 1);       // we get that item, DECREMENT it's count (value of shopping list)
+                if(map.get(endChar) == 0) {                   // if we get all quantities needed for that item
+                    count--;                                  // we don't need that ITEM anymore (count of items needed is DECREASED)
                 }
             }
 
+            // if we still have items that we need from the SHOPPING LIST
             // count is GREATER THAN 0 ---> continue moving the j pointer FORWARD
             if(count > 0) {
                 continue;
@@ -40,11 +42,13 @@ class Solution {
             /*
                     * substring FOUND
                     * REMOVE USELESS characters from the substring while STILL HAVING all characters from t
-             */
+            */
+            // SOLUTION FOUND
+            // see if we can find a SMALLER WINDOW
             while(count == 0) {
                 char startChar = s.charAt(i);
                 i++;
-                if(map.containsKey(startChar)) {
+                if(map.containsKey(startChar)) {                    
                     map.put(startChar, map.get(startChar) + 1);
                     if(map.get(startChar) > 0) {
                         count++;
