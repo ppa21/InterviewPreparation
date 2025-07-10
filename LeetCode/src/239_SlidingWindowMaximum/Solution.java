@@ -36,12 +36,16 @@ class Solution {
 
         for (int i = 0; i < n; i++) {
             // remove indices that are out of bound
+            // k == window size
+            // if windows.peekFirst() is out of window size, remove it
             if (!windows.isEmpty() && windows.peekFirst() <= i - k) {
                 windows.pollFirst();
             }
 
             // remove indices whose corresponding values are less than nums[i]
             // i.e. REMOVING 6 from the LAST iteration
+            // reason is because it will never be the maximum because nums[i] > last elemenet
+            // so remove it
             while (!windows.isEmpty() && nums[i] > nums[windows.peekLast()]) {
                 windows.pollLast();
             }
