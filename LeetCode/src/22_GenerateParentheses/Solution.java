@@ -1,6 +1,6 @@
 /*
     time and space complexity
-    * time: O(4^n / sqrt(n))
+    * time:  O(4^n / sqrt(n))
     * space: O(n)
 */
 
