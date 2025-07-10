@@ -34,10 +34,15 @@ class Solution {
         Arrays.sort(combine, (a, b) -> a[0] - b[0]);
 
         for (int i = position.length - 1; i >= 0; i--) {
+            // calculate time to reach target for CURRENT car
             double currentTime = (double) (target - combine[i][0]) / combine[i][1];
+
+            // check if CURRENT car catches up to the last car (AKA car in front of it)
             if (!stack.isEmpty() && currentTime <= stack.peek()) {
+                // CURRENT car catches up so CAR FLEET aka ONE CAR
                 continue;
             } else {
+                // CURRENT car is slower; will NEVER catch up
                 stack.push(currentTime);
             }
         }
