@@ -1,3 +1,9 @@
+/*
+    time and space complexity
+    * time: O(4^n / sqrt(n))
+    * space: O(n)
+*/
+
 /**
  * n = 3 -> 3 pairs of parentheses -> 3 open parentheses and 3 close parentheses -> 6 parentheses in total
  * Consider, n is max
