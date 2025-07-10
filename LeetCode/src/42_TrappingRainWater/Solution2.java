@@ -21,11 +21,11 @@ class Solution {
 
         while (left < right) {
             if (leftMax < rightMax) {
-                left++;
+                left++;                                     // otherwise, left is at the leftmost boundary and we can't calculate water because it would just overflow
                 leftMax = Math.max(leftMax, height[left]);
                 result = result + leftMax - height[left];
             } else {
-                right--;
+                right--;                                    // otherwise, right is at the rightmost boundary and we can't calculate water because it would just overflow
                 rightMax = Math.max(rightMax, height[right]);
                 result = result + rightMax - height[right];
             }
