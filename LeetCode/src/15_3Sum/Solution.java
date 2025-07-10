@@ -1,3 +1,7 @@
+/*
+    * Time Complexity:     O(N^2) 
+    * Space Complexity:    O(N)  
+*/
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         // sort the array, making it easier for comparing elements in the array
