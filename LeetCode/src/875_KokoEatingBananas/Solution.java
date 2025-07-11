@@ -3,34 +3,30 @@ class Solution {
         * time complexity  = O(log(MAX(values in piles[])) * size of piles array)
         * space complexity = O(1)
      */
+
+    /*
+            Imagine Koko the monkey has piles of bananas and needs to eat them all within h hours. 
+            She can choose how fast to eat (bananas per hour), but once she picks a speed, she sticks with it. 
+            We want to find the slowest speed that still lets her finish in time.
+    */
     public int minEatingSpeed(int[] piles, int h) {
-        // Initalize the left and right boundaries
-        int left = 0;
-        int right = 1; // max speed will be max number in piles i.e. how many bananas can be eaten at max in an hr
+        int left = 0;                         // slowest speed
+        int right = 1;                        // fastest speed
         for (int pile : piles) {
-            right = Math.max(right, pile);
+            right = Math.max(right, pile);    // fastest speed possible
         }
         int result = right;
 
         while (left <= right) {
-            /*
-                * Get the middle index between left and right boundary indexes.
-                * hourSpent stands for the total hour Koko spends.
-             */
-            int middle = left + (right - left) / 2; // middle = k
-            int hourSpent = 0;
+            int middle = left + (right - left) / 2; // try the middle speed
+            int hourSpent = 0;                      // hoursSpent with middle speed
 
-            /*
-                * Iterate over the piles and calculate hourSpent.
-                * We increase the hourSpent by ceil(pile / middle)
-             */
+            // if i eat at middle speed, how long does it take for me to finish all bananas
             for (int pile : piles) {
                 hourSpent += Math.ceil((double) pile / middle);
             }
 
-            /*
-                * if hourSpent is less than given h, we see if we can find less hourSpent AKA better speed to eat bananas/hr
-             */
+            // if we finish in time, middle speed works, but maybe we can go slower so search left of middle
             if (hourSpent <= h) {
                 result = Math.min(result, middle);
                 right = middle - 1;
@@ -39,10 +35,6 @@ class Solution {
             }
         }
 
-        /*
-            * Once the left and right boundaries coincide, we find the target value,
-            * that is, the minimum workable eating speed.
-         */
         return result;
     }
 }
