@@ -38,7 +38,9 @@ class Solution {
             double currentTime = (double) (target - combine[i][0]) / combine[i][1];
 
             // check if CURRENT car catches up to the last car (AKA car in front of it)
-            if (!stack.isEmpty() && currentTime <= stack.peek()) {
+            // meaning if CURRENT car is faster than last car
+            // meaning CURRENT car will take LESS time to reach target than last car
+            if (!stack.isEmpty() && stack.peek() >= currentTime) {
                 // CURRENT car catches up so CAR FLEET aka ONE CAR
                 continue;
             } else {
