@@ -14,6 +14,10 @@
     time complexity  = set: O(1), get: O(logn)
     space complexity = set: O(n), get: O(1)
 */
+
+// This isn't regular binary search looking for an exact match. 
+// We're looking for the largest timestamp that's ≤ our target. 
+// It's like asking "What's the most recent thing that happened before time X?"
 class TimeMap {
     private Map<String, List<Data>> map;
 
