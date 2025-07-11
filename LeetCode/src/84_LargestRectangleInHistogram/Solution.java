@@ -11,10 +11,10 @@ class Solution {
         for (int i = 0; i < heights.length; i++) {
             while (!stack.isEmpty() && heights[i] < heights[stack.peek()]) {
                 /*
-                 * When the current bar's height (heights[i]) is less than the height of the bar
-                 * at the top of the stack (heights[stack.peek()]), we pop the stack.
-                    * This indicates that the popped bar cannot extend further to the right, and we calculate the area
-                    * for the popped bar.
+                 * When the current bar's height [(heights[i]) -- CURR ONE] is less than the height of the bar
+                 * at the top of the stack [(heights[stack.peek()]) -- LAST ONE], we pop the stack. 
+                    * This indicates that the popped bar [LAST ONE] cannot extend further to the right, and we calculate the area
+                    * for the popped bar [LAST ONE]
                  * The width of the rectangle is determined by the difference in
                  * indices (i - stack.peek() - 1).
                  * The height of the rectangle is the height of the popped bar.
