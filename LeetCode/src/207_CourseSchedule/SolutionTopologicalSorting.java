@@ -39,12 +39,15 @@ class Solution {
             int course = it.next();
             noPrereqCourses.remove(course);
 
+            // i just took 'course', so unlock any courses that were waiting for it
             for(int[] pre : prerequisites) {
-                if(course == pre[1]) {
-                    degreeOfNodes[pre[0]]--;
+                   
+                // pre = [2, 3] means course 2 depends on course 3, so you have to finish course 3 first
+                if(course == pre[1]) {                     // just finished course 3
+                    degreeOfNodes[pre[0]]--;               // course 2 has one less dependency
 
-                    if(degreeOfNodes[pre[0]] == 0) {
-                        noPrereqCourses.add(pre[0]);
+                    if(degreeOfNodes[pre[0]] == 0) {       // course 2 has no dependency 
+                        noPrereqCourses.add(pre[0]);       // course 2 can now be taken
                     }
                 }
             }
