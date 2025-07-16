@@ -17,8 +17,8 @@ class Solution {
 
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy = new ListNode(0, head); // dummy node to act as the prev of the first node
-        ListNode curr = head; 
         ListNode prev = dummy; // Node to keep track of the previous node
+        ListNode curr = head; 
         ListNode temp = null; // Temporary node to help in swapping nodes
         int count = k; 
 
