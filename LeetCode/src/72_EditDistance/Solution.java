@@ -28,8 +28,11 @@ class Solution {
                 // If the current characters are different, we consider all possibilities (insert, remove, replace) and choose the minimum
                 else {
                     // Insert: Consider the scenario where a character from word2 is inserted into word1. So, we move to the previous character in word2, but stay at the current character in word1
+                        // dp[i][j - 1]
                     // Remove: Consider the scenario where a character from word1 is removed. So, we move to the previous character in word1, but stay at the current character in word2
+                        // dp[i - 1][j]
                     // Replace: Consider the scenario where a character in word1 is replaced with the current character in word2. So, we move to the previous character in both strings
+                        // dp[i - 1][j - 1]
                     dp[i][j] = 1 + Math.min(dp[i][j - 1], Math.min(dp[i - 1][j], dp[i - 1][j - 1]));
                 }
             }
