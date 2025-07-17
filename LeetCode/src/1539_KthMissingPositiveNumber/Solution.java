@@ -5,6 +5,7 @@
     * formula
         * arr[middle] - 1 - middle
         * count of missing numbers up until index middle
+           * starting from 1
 */
 class Solution {
     public int findKthPositive(int[] arr, int k) {
