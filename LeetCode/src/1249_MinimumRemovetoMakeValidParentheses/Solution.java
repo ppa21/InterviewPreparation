@@ -1,7 +1,7 @@
 /*
         * time complexity  = O(n)
         * space complexity = O(n)
-*/
+ */
 class Solution {
     public String minRemoveToMakeValid(String s) {
         int extraOpens = 0;     
@@ -23,7 +23,7 @@ class Solution {
             } else {
                 temp.append(ch);
             }
-    }
+        }
     
         StringBuilder result = new StringBuilder();
         int keep = totalOpens - extraOpens;
@@ -33,9 +33,8 @@ class Solution {
                 if (keep == 0) {
                     continue;
                 }
-            
-            result.append(ch);
-            keep--;
+                result.append(ch);
+                keep--;
             } else {
                 result.append(ch);
             }
