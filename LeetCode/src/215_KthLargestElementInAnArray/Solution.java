@@ -19,6 +19,6 @@ class Solution {
             }
         }
 
-        return minHeap.remove();    // kth largest element will be the first element
+        return minHeap.peek();    // kth largest element will be the first element
     }
 }
