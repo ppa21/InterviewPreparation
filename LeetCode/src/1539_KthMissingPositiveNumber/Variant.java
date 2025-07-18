@@ -24,6 +24,6 @@ class Solution {
         }
 
         // right = index of last element where we had < k missing elements
-        return nums[0] + k + right;
+        return nums[0] + k + right;      // left + k ----> right + k + nums[0]
     }
 }
