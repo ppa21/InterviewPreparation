@@ -14,7 +14,7 @@ class Solution {
         for (int n : nums) {
             currPrefixSum += n;
 
-            // currPrefixSum - k ----> look for previous sum that creates [currPrefixSum - k]
+            // currPrefixSum - k ----> previous prefix sum that CANCELS OUT currPrefixSum and LEAVES remainder k
             if (prefixSumToFreq.containsKey(currPrefixSum - k)) {
                 count += prefixSumToFreq.get(currPrefixSum - k);
             }
