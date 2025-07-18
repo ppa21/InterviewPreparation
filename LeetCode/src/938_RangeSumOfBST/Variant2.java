@@ -81,7 +81,7 @@ class Solution {
         return left; // val(left index) >= lower
     }
     
-    // Main method - same logic as C++ calculate()
+    // Main method
     public int rangeSumBST(int lower, int upper) {
         int rightBoundary = findRightBoundary(0, vals.size() - 1, upper);
         int leftBoundary = findLeftBoundary(0, vals.size() - 1, lower);
