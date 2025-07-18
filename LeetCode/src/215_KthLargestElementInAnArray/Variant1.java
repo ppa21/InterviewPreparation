@@ -1,10 +1,6 @@
 /*
     * Time Complexity  = O(nlogk)
-        * minHeap size = k;
-            * minHeap.remove() = logn --> logk 
-                * since it will only store k values at a time
-                    * BETTER 
-    * Space Complexity = O(k); minHeap only maintains k elements at a time
+    * Space Complexity = O(k)
 
     * VARIANT: What if you had to return the Kth + 1 largest number in an integer array?
 */
@@ -17,14 +13,13 @@ class Solution {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
         for (int n : nums) {
-            minHeap.add(n); // add everything in minHeap 
+            minHeap.add(n);
 
-            if (minHeap.size() > k) {   // if minHeap.size() is GREATER than k
-                // remove the SMALLEST ELEMENT (which happens to be the FIRST ELEMENT cuz minHeap) until there are ONLY K ELEMENTS
+            if (minHeap.size() > k) {
                 minHeap.remove();       
             }
         }
 
-        return minHeap.remove();    // kth largest element will be the first element
+        return minHeap.remove();
     }
 }
