@@ -44,9 +44,11 @@ class Solution {
                 if (x < 0 || x >= grid.length) {
                     continue;
                 }
+                    
                 if (y < 0 || y >= grid[0].length) {
                     continue;
                 }
+                    
                 if (grid[x][y] == 1) {
                     continue;
                 }
