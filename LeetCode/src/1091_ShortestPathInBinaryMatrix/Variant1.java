@@ -50,8 +50,8 @@ class Solution {
                 if (grid[x][y] == 1) {
                     continue;
                 }
+                    
                 grid[x][y] = 1;
-                
                 List<int[]> pathCopy = new ArrayList<>(path);
                 pathCopy.add(new int[]{x, y});
                 q.offer(new Object[]{x, y, pathCopy});
