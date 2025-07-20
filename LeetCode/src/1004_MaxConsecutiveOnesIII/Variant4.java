@@ -7,7 +7,7 @@
 class Solution {    
     public double getMaxVacations(char[] days, double pto) {
         double maxVacation = 0.0;
-        double wholePto = Math.floor(pto); // 3.7 -> 3
+        double wholePto = (int) pto; // 3.7 -> 3
         double partialPto = pto - wholePto; // 3.7 - 3 = 0.7 
         int left = 0;
 
