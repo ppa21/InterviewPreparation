@@ -9,6 +9,22 @@ class Solution {
                                   {1, 1}, {1, 0}, {1, -1},
                                   {0, -1}, {-1, -1}};
     
+    public List<List<Integer>> pathBinaryMatrix(int[][] grid) {
+        if (grid[0][0] == 1 || grid[grid.length - 1][grid[0].length - 1] == 1) {
+            return new ArrayList<>();
+        }
+        
+        List<int[]> path = new ArrayList<>();
+        dfs(grid, path, 0, 0);
+        
+        // convert path to List<List<Integer>>
+        List<List<Integer>> result = new ArrayList<>();
+        for (int[] cell : path) {
+            result.add(Arrays.asList(cell[0], cell[1]));
+        }
+        return result;
+    }
+
     private boolean dfs(int[][] grid, List<int[]> path, int i, int j) {
         grid[i][j] = 1;
         path.add(new int[]{i, j});
@@ -38,21 +54,5 @@ class Solution {
         
         path.remove(path.size() - 1); // equivalent to pop_back()
         return false;
-    }
-    
-    public List<List<Integer>> pathBinaryMatrix(int[][] grid) {
-        if (grid[0][0] == 1 || grid[grid.length - 1][grid[0].length - 1] == 1) {
-            return new ArrayList<>();
-        }
-        
-        List<int[]> path = new ArrayList<>();
-        dfs(grid, path, 0, 0);
-        
-        // convert path to List<List<Integer>>
-        List<List<Integer>> result = new ArrayList<>();
-        for (int[] cell : path) {
-            result.add(Arrays.asList(cell[0], cell[1]));
-        }
-        return result;
     }
 }
