@@ -18,7 +18,7 @@
        * Time Complexity:  O(N) preprocessing, O(log N) per query
        * Space Complexity: O(N)
        
-       * At most 10^4 calls will be made to rangeSumBST 
+       * VARIANT: at most 10^4 calls will be made to rangeSumBST 
  */
 class Solution {
     private List<Integer> vals;        // inorder list; left -> root.val -> right
