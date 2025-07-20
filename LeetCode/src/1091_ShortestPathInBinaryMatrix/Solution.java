@@ -22,7 +22,8 @@ class Solution {
             int i = curr[0];
             int j = curr[1];
             int s = curr[2];
-            
+
+            // end? 
             if (i == grid.length - 1 && j == grid[0].length - 1) {
                 return s;
             }
