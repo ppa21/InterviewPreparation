@@ -52,7 +52,7 @@ class Solution {
             }
         }
         
-        path.remove(path.size() - 1); // equivalent to pop_back()
+        path.remove(path.size() - 1); // backtrack
         return false;
     }
 }
