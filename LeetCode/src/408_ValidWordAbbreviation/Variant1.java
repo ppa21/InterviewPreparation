@@ -31,9 +31,11 @@ public class Solution {
                 a++;
             }
             w += skip;
+               
             if (w > word.length()) {
                 return false;
             }
+               
             return recurse(word, abbr, w, a);
         }
         if (abbr.charAt(a) == '*') {
