@@ -1,5 +1,5 @@
 /*
-        * time complexity = O(n + k); n = size of s, k = size of include
+        * time complexity  = O(n + k); n = size of s, k = size of include
         * space complexity = O(k)
 
         * Variant: What if you could only consider a limited set of characters as a part of
