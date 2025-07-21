@@ -27,7 +27,6 @@ public class Solution {
                 skip = skip * 10 + (abbr.charAt(a) - '0');
                 a++;
             }
-            
             w += skip;
         }
         
