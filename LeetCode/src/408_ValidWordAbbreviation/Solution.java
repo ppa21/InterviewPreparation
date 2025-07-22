@@ -25,7 +25,7 @@ public class Solution {
             if (Character.isDigit(abbr.charAt(a))) {
                 int skip = 0;
                 while (a < abbr.length() && Character.isDigit(abbr.charAt(a))) {
-                    skip = skip * 10 + abbr.charAt(a) - '0';
+                    skip = skip * 10 + (abbr.charAt(a) - '0');
                     a++;
                 }
                 w += skip;
