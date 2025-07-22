@@ -37,7 +37,7 @@ public int[][] mergeTwoLists(int[][] A, int[][] B) {
 }
 
 private void tryMerge(List<int[]> result, int[] curr) {
-    if (result.isEmpty() || curr[0] > result.get(result.size() - 1)[1]) {
+    if (result.isEmpty() || result.get(result.size() - 1)[1] < curr[0]) { // last[1] < curr[0] --> no conflict
         result.add(curr);
     } else {
         result.get(result.size() - 1)[1] = Math.max(curr[1], result.get(result.size() - 1)[1]);
