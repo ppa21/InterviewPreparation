@@ -6,7 +6,8 @@
 */
 public int[][] mergeTwoLists(int[][] A, int[][] B) {
     List<int[]> result = new ArrayList<>();
-    int i = 0, j = 0;
+    int i = 0;
+    int j = 0;
     
     while (i < A.length && j < B.length) {
         int[] curr;
