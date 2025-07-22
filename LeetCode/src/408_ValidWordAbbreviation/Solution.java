@@ -21,13 +21,15 @@ public class Solution {
             if (abbr.charAt(a) == '0') {
                 return false;
             }
-            
-            int skip = 0;
-            while (a < abbr.length() && Character.isDigit(abbr.charAt(a))) {
-                skip = skip * 10 + (abbr.charAt(a) - '0');
-                a++;
+
+            if (Character.isDigit(abbr.charAt(a))) {
+                int skip = 0;
+                while (a < abbr.length() && Character.isDigit(abbr.charAt(a))) {
+                    skip = skip * 10 + abbr.charAt(a) - '0';
+                    a++;
+                }
+                w += skip;
             }
-            w += skip;
         }
         
         return a == abbr.length() && w == word.length();
