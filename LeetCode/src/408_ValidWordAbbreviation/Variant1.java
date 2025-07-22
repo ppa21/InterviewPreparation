@@ -38,6 +38,7 @@ public class Solution {
                
             return recurse(word, abbr, w, a);
         }
+           
         if (abbr.charAt(a) == '*') {
             return recurse(word, abbr, w, a + 1) ||
                    recurse(word, abbr, w + 1, a);
