@@ -82,7 +82,7 @@ class LRUCache {
         
         Node nodeToRemove = cache.get(key);
         remove(nodeToRemove); // Remove from the linked list
-        cache.remove(key);    // Remove from the HashMap
+        cache.remove(nodeToRemove.key);    // Remove from the HashMap
         
         return true;
     }
