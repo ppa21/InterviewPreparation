@@ -2,7 +2,7 @@
         * time complexity  = O(n + m)
         * space complexity = O(n + m)
 
-        * Variant: What if you had to merge two interval lists instead of one?; A and B are already sorted
+        * Variant: What if you had to merge two interval lists instead of one? A and B are already sorted
 */
 public int[][] mergeTwoLists(int[][] A, int[][] B) {
     List<int[]> result = new ArrayList<>();
