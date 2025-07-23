@@ -21,7 +21,7 @@ class Solution {
         return sum;
     }
 
-  class Object {
+    class Object {
         List<Object> list;
         
         public Object() {
