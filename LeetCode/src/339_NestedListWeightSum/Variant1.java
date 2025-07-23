@@ -22,7 +22,7 @@ class Solution {
     }
 
   class Object {
-        List<java.lang.Object> value;
+        List<Object> value;
         
         public Object() {
             this.value = new ArrayList<>();
