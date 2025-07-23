@@ -17,7 +17,7 @@ class Solution {
                 if (obj instanceof Integer) {
                     sum += (Integer) obj * level;
                 } {
-                    queue.addAll(((ObjectNode) obj).value);
+                    queue.addAll(((Object) obj).value);
                 }
             }
             level++;
