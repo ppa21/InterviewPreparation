@@ -11,11 +11,11 @@ class Solution {
     
     private int dfs(List<Object> list, int depth) {
         int sum = 0;
-        for (Object l : list) {
-            if (l instanceof Integer) {
-                sum += (Integer) list * depth;
+        for (Object o : list) {
+            if (o instanceof Integer) {
+                sum += (Integer) o * depth;
             } else {
-                sum += dfs(((Object) l).list, depth + 1);
+                sum += dfs(((Object) o).list, depth + 1);
             }
         }
         return sum;
