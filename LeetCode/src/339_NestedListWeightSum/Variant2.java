@@ -5,8 +5,8 @@
         * VARIANT: What if you had to define your own schema for NestedList and implement BFS?
 */
 class Solution {
-    public int depthSum(List<Object> objs) {
-        Queue<Object> queue = new LinkedList<>(objs);
+    public int depthSum(List<Object> list) {
+        Queue<Object> queue = new LinkedList<>(list);
         int level = 1;
         int sum = 0;
         
@@ -16,12 +16,20 @@ class Solution {
                 Object obj = queue.poll();
                 if (obj instanceof Integer) {
                     sum += (Integer) obj * level;
-                } else if (obj instanceof ObjectNode) {
+                } {
                     queue.addAll(((ObjectNode) obj).value);
                 }
             }
             level++;
         }
         return sum;
+    }
+
+    class Object {
+        List<Object> list;
+        
+        public Object() {
+            this.list = new ArrayList<>();
+        }
     }
 }
