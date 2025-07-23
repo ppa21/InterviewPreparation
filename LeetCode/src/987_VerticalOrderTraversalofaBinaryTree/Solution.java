@@ -23,7 +23,7 @@ class Solution {
             });
 
             List<Integer> currCol = new ArrayList<>();
-            for (Pair<TreeNode, Integer> pair : colToNodeAndRow.get(i)) {
+            for (Pair<TreeNode, Integer> pair : column) {
                 currCol.add(pair.getKey().val);
             }
             result.add(currCol);
