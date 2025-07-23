@@ -5,27 +5,27 @@
         * VARIANT: What if you had to define your own schema for NestedList and implement DFS?
 */
 class Solution {
-    public int depthSum(List<Object> objs) {
-        return dfs(objs, 1);
+    public int depthSum(List<Object> list) {
+        return dfs(list, 1);
     }
     
-    private int dfs(List<Object> objs, int depth) {
+    private int dfs(List<Object> list, int depth) {
         int sum = 0;
-        for (Object obj : objs) {
-            if (obj instanceof Integer) {
-                sum += (Integer) obj * depth;
+        for (Object l : list) {
+            if (l instanceof Integer) {
+                sum += (Integer) list * depth;
             } else {
-                sum += dfs(((Object) obj).value, depth + 1);
+                sum += dfs(((Object) l).list, depth + 1);
             }
         }
         return sum;
     }
 
   class Object {
-        List<Object> value;
+        List<Object> list;
         
         public Object() {
-            this.value = new ArrayList<>();
+            this.list = new ArrayList<>();
         }
     }
 }
