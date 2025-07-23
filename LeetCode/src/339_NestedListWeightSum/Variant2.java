@@ -16,8 +16,8 @@ class Solution {
                 Object obj = queue.poll();
                 if (obj instanceof Integer) {
                     sum += (Integer) obj * level;
-                } {
-                    queue.addAll(((Object) obj).value);
+                } else {
+                    queue.addAll(((Object) obj).list);
                 }
             }
             level++;
