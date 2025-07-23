@@ -8,7 +8,7 @@ class Solution {
     public String minRemoveToMakeValid(String s) {
         int extraOpens = 0;
         int totalOpens = 0;
-        char[] chars = s.toCharArray();
+        char[] chars = s.toCharArray();    // modify this char[] in place and keep track of index j. and then just substring it based on index j
         int j = 0;
     
         for (char ch : chars) {
