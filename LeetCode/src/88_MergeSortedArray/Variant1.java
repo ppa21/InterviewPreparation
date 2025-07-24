@@ -1,6 +1,9 @@
 /*
         * time complexity  = O(m + n); m = listA.length / 2, n = listB.length
         * space complexity = O(1)
+
+        * VARIANT: What if the sizes - m and n - weren't given? Instead, we're guaranteed
+          that one list is double in size of the other. Merge them like you would in the original problem.
 */
 public class Solution {
     public void mergeVectors(int[] listA, int[] listB) {
