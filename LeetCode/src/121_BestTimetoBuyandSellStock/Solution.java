@@ -32,7 +32,7 @@ class Solution {
         int maxProfit = 0;
 
         while(right < prices.length) {
-            if(prices[left] < prices[right]) {
+            if(prices[right] > prices[left]) {
                 profit = prices[right] - prices[left];
                 maxProfit = Math.max(maxProfit, profit);
             } else {
