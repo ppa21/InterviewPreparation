@@ -1,6 +1,8 @@
 /*
          * time complexity  = O(min(L1, L2) * log(max(L1, L2))); where L1, L2 are non-zero values in each list
          * space complexity = O(L1) + O(L2)
+
+         * VARIANT: What if you had to optimize your algorithm using binary search?
  */
 class SparseVectorVariant {
     List<int[]> indexToVal;
