@@ -21,6 +21,7 @@ class SparseVectorVariant {
         int sum = 0;
         
         // Always iterate the smaller vector to minimize total binary searches
+        // AKA iterate smaller vector and binary search the larger vector
         if (indexToVal.size() < vec.indexToVal.size()) {
             for (int[] pair : indexToVal) {
                 int index = pair[0];
