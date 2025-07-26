@@ -24,9 +24,9 @@ class Solution {
                 return mid;
             }
         
-            if (nums[mid + 1] > nums[mid]) {        	  // If right neighbor is greater, peak must be on the right side
+            if (nums[mid + 1] > nums[mid]) {        // If right neighbor is greater, peak must be on the right side
                 left = mid + 1;
-            } else if (nums[mid - 1] > nums[mid]) {       // If left neighbor is greater, peak must be on the left side
+            } else {                                // If left neighbor is greater, peak must be on the left side
                 right = mid - 1;
             }
         }
