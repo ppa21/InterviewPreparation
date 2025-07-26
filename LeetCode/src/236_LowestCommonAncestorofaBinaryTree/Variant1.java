@@ -1,13 +1,3 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-
 /*
         * time complexity  = O(N)
         * space complexity = O(H)
@@ -15,7 +5,7 @@
         * Variant: What if you were given an N-ary Tree as the input, no longer a binary tree?
 */
 class Solution {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public Node lowestCommonAncestor(Node root, Node p, Node q) {
         if (root == null) {
             return null;
         }
@@ -25,7 +15,7 @@ class Solution {
         }
 
         List<Node> keyNodes = new ArrayList<>();
-        for (Node child : node.children) {
+        for (Node child : root.children) {
             Node keyNode = lowestCommonAncestor(child, p, q);
             if (keyNode != null) {
                 keyNodes.add(keyNode);
@@ -33,7 +23,7 @@ class Solution {
         }
         
         if (keyNodes.size() == 2) {
-            return node;
+            return root;
         } else if (keyNodes.size() == 1) {
             return keyNodes.get(0);
         } else {
