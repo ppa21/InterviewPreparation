@@ -2,7 +2,8 @@
      * time complexity  = O(n)
      * space complexity = O(n) - but slightly more space efficient than StringBuilder
 
-     * VARIANT: Space-optimized approach using char array. IN PLACE like c++ can't be done can't be done 
+     * VARIANT: Space-optimized approach using char array. 
+       done IN PLACE with chars[] arry with j
  */
 class Solution {
     public String minRemoveToMakeValid(String s) {
