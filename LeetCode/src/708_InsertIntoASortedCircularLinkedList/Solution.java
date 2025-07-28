@@ -33,7 +33,7 @@ class Solution {
         Node prev = head;
         Node curr = head.next;
         
-        while (true) {
+        while (curr != null) {
             // Case 2: Normal insertion - value fits between prev and curr in sorted order
             if (prev.val <= insertVal && insertVal <= curr.val) {
                 break;
