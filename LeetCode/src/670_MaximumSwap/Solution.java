@@ -4,7 +4,7 @@
 */
 class Solution {
     public int maximumSwap(int num) {
-        String numStr = Integer.toString(num);
+        String numStr = Integer.toString(num);       // String.valueOf(num)
         char[] digits = numStr.toCharArray();
         
         // Track last position of each digit 0-9
