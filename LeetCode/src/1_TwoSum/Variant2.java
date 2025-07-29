@@ -1,8 +1,8 @@
 /*
         * time complexity  = O(n)
-  	    * space complexity = O(n)
+  	* space complexity = O(n)
  
-	    * variant: what if you had to return the number of domino pairs that add up to a target?
+        * variant: what if you had to return the number of domino pairs that add up to a target?
 */
 class Solution {
     public int twoSumSecondVariant(int[][] dominoes, int target) {
