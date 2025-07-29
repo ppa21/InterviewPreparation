@@ -4,11 +4,12 @@
 */
 class MovingAverage {
     private Queue<Integer> queue;
-    private int windowSum = 0;
+    private int windowSum;
     private int windowSize;
     
     public MovingAverage(int windowSize) {
         this.windowSize = windowSize;
+        this.windowSum = 0;
         this.queue = new LinkedList<>();
     }
     
