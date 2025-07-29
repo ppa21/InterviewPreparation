@@ -5,7 +5,7 @@
         * Variant: What if you had to return a resulting array of the averages of each subarray of size, "size"?
 */
 public class SlidingWindowAverage {
-    public static List<Double> computeRunningAverage(int[] nums, int windowSize) {
+    public List<Double> computeRunningAverage(int[] nums, int windowSize) {
         List<Double> result = new ArrayList<>();
         int windowSum = 0;
         
