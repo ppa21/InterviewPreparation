@@ -2,7 +2,7 @@
 	* time complexity  = O(n)
   	* space complexity = O(n)
  
-	* variant: What if you had to return T/F if you find at least one pair of numbers that add up to the target?
+	* variant: what if you had to return T/F if you find at least one pair of numbers that add up to the target?
 */
 class Solution {
     public boolean twoSum_first_variant(int[] nums, int target) {
