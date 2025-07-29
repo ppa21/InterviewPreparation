@@ -9,7 +9,7 @@ class Solution {
     	Set<Integer> complements = new HashSet<>();
 		
     	for (int n : nums) {
-	    int complement = target - num;
+	    int complement = target - n;
 			
     	    if (complements.contains(complement)) {
                 return true;
