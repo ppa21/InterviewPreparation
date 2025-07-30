@@ -1,6 +1,6 @@
 /*
          * Time Complexity:  O(n)
-         * Space Complexity: O(1)
+         * Space Complexity: O(n)
 
          * Variant: What if you had to return all of the buildings that either have an ocean view
            to its left and/or its right? This becomes very similar to Leetcode 42 Trapping Rain Water
