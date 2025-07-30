@@ -3,19 +3,22 @@
          * Space Complexity: O(1)
  */
 class Solution {
-    public List<Integer> findBuildings(int[] heights) {
-        List<Integer> result = new ArrayList<>();
+    public int[] findBuildings(int[] heights) {
+        List<Integer> list = new ArrayList<>();
         int rightMax = 0;
-        
+
         for (int i = heights.length - 1; i >= 0; i--) {
             if (heights[i] > rightMax) {
-                result.add(i);
+                list.add(i);
                 rightMax = heights[i];
             }
         }
-        
-        // Reverse to get increasing order of indices
-        Collections.reverse(result);
+
+        int[] result = new int[list.size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = list.get(list.size() - 1 - i);
+        }
+
         return result;
     }
 }
