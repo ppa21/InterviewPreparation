@@ -51,7 +51,6 @@ class Solution {
         }
             
         map.get(node).random = map.get(node.random);
-        
         copyRandom(node.left, map);
         copyRandom(node.right, map);
     }
