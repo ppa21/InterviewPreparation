@@ -23,7 +23,6 @@ class Solution {
                 leftMax = Math.max(leftMax, heights[left]);
                 left++;
             } else {
-                // Process from right side
                 if (heights[right] > rightMax) {
                     result.add(right);
                 }
@@ -32,7 +31,7 @@ class Solution {
             }
         }
         
-        Collections.sort(result); // Sort indices in increasing order
+        Collections.sort(result);
         return result;
     }
 }
