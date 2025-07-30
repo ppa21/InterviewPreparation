@@ -1,8 +1,13 @@
+/*
+        * Problem: Given strings s and t, find the minimum window substring of s that contains 
+          all characters in t (including duplicates with exact frequencies).
+
+        * Example: s = "ADOBECODEBANC", t = "ABC" → return "BANC"
+        
+        * Time Complexity:      O(2N + M) ---> O(N + M) ---> N = s.length(), M = t.length()
+        * Space Complexity:     O(M) ---> M = t.length() ---> HashMap.size() == CONSTANT TIME O(1)
+*/
 class Solution {
-    /*
-            * Time Complexity:      O(2N + M) ---> O(N + M) ---> N = s.lenght(), M = t.length()
-            * Space Complexity:     O(M) ---> M = t.length() ---> HashMap.size() == CONSTANT TIME O(1)
-     */
     public String minWindow(String s, String t) {
         if(s == null || s.isEmpty() || t == null || t.isEmpty()) {
             return "";
@@ -29,7 +34,7 @@ class Solution {
             if(map.containsKey(endChar)) {                    // if the shopping list contains this item we need
                 map.put(endChar, map.get(endChar) - 1);       // we get that item, DECREMENT it's count (value of shopping list)
                 if(map.get(endChar) == 0) {                   // if we get all quantities needed for that item
-                    count--;                                  // we don't need that ITEM anymore (count of items needed is DECREASED)
+                    count--;                                  // we don't need that ITEM anymore (count/number of items we need is DECREASED)
                 }
             }
 
