@@ -10,7 +10,7 @@
  */
 
 /*
-        * time complexity  = O(n); n = size of n
+        * time complexity  = O(n); n = size of head
         * space complexity = O(1)
 */
 class Solution {
