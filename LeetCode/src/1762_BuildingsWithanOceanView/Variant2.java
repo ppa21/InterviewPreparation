@@ -7,31 +7,46 @@
          * similar to TRAPPING RAIN WATER solution 2
  */
 class Solution {
-    public List<Integer> findBuildingsWithOceanView(int[] heights) {
-        List<Integer> result = new ArrayList<>();
+    public int[] findBuildingViewCount_second_variant_1762(int[] heights) {
+        int n = heights.length;
+        if (n == 0 || n == 1) {
+            return new int[0];
+        }
+
         int left = 0;
-        int right = heights.length - 1;
-        int leftMax = 0;   // Max height seen from left
-        int rightMax = 0;  // Max height seen from right
+        int right = n - 1;
+        int leftMax = heights[left];
+        int rightMax = heights[right];
+        List<Integer> leftView = new ArrayList<>();
+        List<Integer> rightView = new ArrayList<>();
         
-        while (left <= right) {
+        leftView.add(left);
+        rightView.add(right);
+
+        while (left < right) {
             if (leftMax < rightMax) {
-                // Process from left side
-                if (heights[left] > leftMax) {
-                    result.add(left);
-                }
-                leftMax = Math.max(leftMax, heights[left]);
                 left++;
-            } else {
-                if (heights[right] > rightMax) {
-                    result.add(right);
+                if (left < right && heights[left] > leftMax) {
+                    leftView.add(left);
+                    leftMax = heights[left];
                 }
-                rightMax = Math.max(rightMax, heights[right]);
+            } else {
                 right--;
+                if (left < right && heights[right] > rightMax) {
+                    rightView.add(right);
+                    rightMax = heights[right];
+                }
             }
         }
+
+        Collections.reverse(rightView);
+        leftView.addAll(rightView);
+
+        int[] result = new int[leftView.size()];
+        for (int i = 0; i < leftView.size(); i++) {
+            result[i] = leftView.get(i);
+        }
         
-        Collections.sort(result);
         return result;
     }
 }
