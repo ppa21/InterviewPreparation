@@ -8,6 +8,11 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+/*
+        * time complexity  = O(n); n = size of n
+        * space complexity = O(1)
+*/
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode result = new ListNode();
