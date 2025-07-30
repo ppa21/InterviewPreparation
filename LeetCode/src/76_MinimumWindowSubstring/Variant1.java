@@ -1,6 +1,6 @@
 /*
-        * Problem: Given word array 'sentence' and target words 'words', find minimum contiguous 
-          subarray that contains all target words (at least once each).
+        * Problem: Given 2 String arrays - "sentence" and "words" - find the shortest substring such
+                   that "sentence" contains every word in "words"
         
         * Example: sentence = ['is','one','ok','you','the','frog','ok','one','the','you','is','not','frog']
                       words = ['is','you','frog'] 
