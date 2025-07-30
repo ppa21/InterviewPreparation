@@ -18,7 +18,7 @@ class Node {
         * Time Complexity  = O(n)
         * Space Complexity = O(n)
 
-				* Variant: What if you had to deep copy a binary tree, not a linked list?
+	* Variant: What if you had to deep copy a binary tree, not a linked list?
 */
 class Solution {
     public Node copyRandomBinaryTree(Node root) {
