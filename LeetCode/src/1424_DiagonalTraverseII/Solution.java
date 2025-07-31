@@ -2,7 +2,7 @@
         * time complexity  = O(n)
         * space complexity = O(sqrt(n))
 
-        * rotate matrix 45deg and you pretty get a tree structure and 
+        * rotate matrix 45deg and you get a tree structure and 
           you can do level order traversal
 */
 class Solution {
