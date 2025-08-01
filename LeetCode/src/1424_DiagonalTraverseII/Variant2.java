@@ -16,7 +16,7 @@ class Solution {
         
         // Start from each row in last column (skip first row to avoid duplicates)
         for (int row = 1; row < nums.length; row++) {
-            helper(nums, row, nums[0].length - 1);
+            helper(nums, row, nums[row].length - 1);
         }
     }
     
