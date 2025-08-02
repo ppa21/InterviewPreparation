@@ -16,7 +16,7 @@ class Solution {
             int middle = left + (right - left) / 2;
             int missing = arr[middle] - 1 - middle;
 
-            if (missing < k) {
+            if (k > missing) {
                 left = middle + 1;
             } else {
                 right = middle - 1;
