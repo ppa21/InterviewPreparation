@@ -16,7 +16,7 @@ class Solution {
             int middle = left + (right - left) / 2;
             int missing = nums[middle] - nums[0] - middle;
 
-            if (missing < k) {
+            if (k > missing) {
                 left = middle + 1;
             } else {
                 right = middle - 1;
