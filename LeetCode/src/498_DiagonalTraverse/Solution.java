@@ -10,7 +10,9 @@
 */
 class Solution {
     public int[] findDiagonalOrder(int[][] mat) {
-        if (mat == null || mat.length == 0) return new int[0];
+        if (mat == null || mat.length == 0) {
+            return new int[0];
+        }
         
         int rows = mat.length;
         int cols = mat[0].length;
