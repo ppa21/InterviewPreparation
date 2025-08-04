@@ -22,7 +22,7 @@ class Solution {
         
         // binary exponentiation; number can be expressed as a sum of powers of 2
         // example: 13 = 8+4+1 = 1101₂, so x^13 = x^8 × x^4 × x^1
-        while (n > 0) {
+        while (n > 0) { // n != 0
             if (n % 2 == 1) {      // if rightmost bit is 1
                 result *= base;    // multiply that power into result
             }
