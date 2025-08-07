@@ -3,10 +3,9 @@
         * space complexity = O(h); h = height of the tree
 */
 class Solution {
-    private int totalSum;
+    private int totalSum = 0;
     
     public int sumNumbers(TreeNode root) {
-        totalSum = 0;
         preorder(root, 0);
         return totalSum;
     }
