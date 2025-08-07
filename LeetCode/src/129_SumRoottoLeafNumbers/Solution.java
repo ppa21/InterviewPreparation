@@ -3,22 +3,22 @@
         * space complexity = O(h); h = height of the tree
 */
 class Solution {
-    private int rootToLeaf;
+    private int totalSum;
     
     public int sumNumbers(TreeNode root) {
-        rootToLeaf = 0;
+        totalSum = 0;
         preorder(root, 0);
-        return rootToLeaf;
+        return totalSum;
     }
     
-    private void preorder(TreeNode node, int currNumber) {
+    private void preorder(TreeNode node, int currSum) {
         if (node != null) {
-            currNumber = currNumber * 10 + node.val;
+            currSum = currSum * 10 + node.val;
             if (node.left == null && node.right == null) {
-                rootToLeaf += currNumber;
+                totalSum += currSum;
             }
-            preorder(node.left, currNumber);
-            preorder(node.right, currNumber);
+            preorder(node.left, currSum);
+            preorder(node.right, currSum);
         }
     }
 }
