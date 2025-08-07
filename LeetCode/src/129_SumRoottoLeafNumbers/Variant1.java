@@ -5,24 +5,24 @@
         * Variant: What if you nodes could be larger than 9?
 */
 class Solution {
-    private int rootToLeaf;
+    private int totalSum;
     
     public int sumNumbers(TreeNode root) {
-        rootToLeaf = 0;
+        totalSum = 0;
         preorder(root, 0);
-        return rootToLeaf;
+        return totalSum;
     }
     
-    private void preorder(TreeNode node, int currNumber) {
+    private void preorder(TreeNode node, int currSum) {
         if (node != null) {
             int digits = String.valueOf(node.val).length();
             int multiplier = (int)Math.pow(10, digits);
-            currNumber = currNumber * multiplier + node.val;
+            currSum = currSum * multiplier + node.val;
             if (node.left == null && node.right == null) {
-                rootToLeaf += currNumber;
+                totalSum += currSum;
             }
-            preorder(node.left, currNumber);
-            preorder(node.right, currNumber);
+            preorder(node.left, currSum);
+            preorder(node.right, currSum);
         }
     }
 }
