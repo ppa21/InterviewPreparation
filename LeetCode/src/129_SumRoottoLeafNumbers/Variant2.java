@@ -3,26 +3,26 @@
         * space complexity = O(h); h = height of the tree
 */
 class Solution {
-    private int rootToLeaf;
+    private int totalSum;
     
     public int sumNumbers(TreeNode root) {
-        rootToLeaf = 0;
+        totalSum = 0;
         preorder(root, 0, 0);
-        return rootToLeaf;
+        return totalSum;
     }
     
-    private void preorder(TreeNode node, int currNumber, int numNegatives) {
+    private void preorder(TreeNode node, int currSum, int numNegatives) {
         if (node != null) {
-            currNumber = currNumber * 10 + Math.abs(node.val);
+            currSum = currSum * 10 + Math.abs(node.val);
             if (node.val < 0) {
                 numNegatives++;
             }
             if (node.left == null && node.right == null) {
                 int sign = (numNegatives % 2 == 1) ? -1 : 1;
-                rootToLeaf += currNumber * sign;
+                totalSum += currSum * sign;
             }
-            preorder(node.left, currNumber, numNegatives);
-            preorder(node.right, currNumber, numNegatives);
+            preorder(node.left, currSum, numNegatives);
+            preorder(node.right, currSum, numNegatives);
         }
     }
 }
