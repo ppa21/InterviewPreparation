@@ -12,10 +12,11 @@ class Solution {
     
     private void preorder(TreeNode node, int currSum, int numNegatives) {
         if (node != null) {
-            currSum = currSum * 10 + Math.abs(node.val);
             if (node.val < 0) {
                 numNegatives++;
             }
+
+            currSum = currSum * 10 + Math.abs(node.val);
             if (node.left == null && node.right == null) {
                 int sign = (numNegatives % 2 == 1) ? -1 : 1;
                 totalSum += currSum * sign;
