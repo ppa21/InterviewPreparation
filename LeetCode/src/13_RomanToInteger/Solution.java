@@ -1,6 +1,7 @@
-import java.util.HashMap;
-import java.util.Map;
-
+/*
+        * time complexity  = O(n)
+        * space complexity = O(1)
+*/
 class Solution {
     public int romanToInt(String s) {
         Map<Character, Integer> map = new HashMap<>();
