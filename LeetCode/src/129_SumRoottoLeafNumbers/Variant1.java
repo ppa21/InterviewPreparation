@@ -5,10 +5,9 @@
         * Variant: What if you nodes could be larger than 9?
 */
 class Solution {
-    private int totalSum;
+    private int totalSum = 0;
     
     public int sumNumbers(TreeNode root) {
-        totalSum = 0;
         preorder(root, 0);
         return totalSum;
     }
