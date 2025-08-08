@@ -1,6 +1,10 @@
 /*
         * time complexity  = O(n); n = number of nodes
         * space complexity = O(h); h = height of the tree
+
+        * VARIANT: What if you had to ignore negative signs in your calculations until
+          you reached a leaf node, and instead, only consider signage if a root-to-leaf path is
+          a "negative path"?
 */
 class Solution {
     private int totalSum = 0;
