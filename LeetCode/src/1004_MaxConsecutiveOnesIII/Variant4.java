@@ -27,7 +27,7 @@ class Solution {
             
             double extension = 0.0;
             if ((left > 0 && days[left - 1] == 'W') ||
-                (right < days.length - 1 && days[right + 1] == 'W')) {
+                (right + 1 < days.length && days[right + 1] == 'W')) {
                 extension = partialPto;
             }
             
