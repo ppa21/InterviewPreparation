@@ -37,7 +37,7 @@ class Solution {
         
         while (curr != null) {
             // Case 2: Normal insertion - value fits between prev and curr in sorted order
-            if (prev.val <= insertVal && insertVal <= curr.val) {
+            if (insertVal >= prev.val && insertVal <= curr.val) {
                 break;
             }
             
