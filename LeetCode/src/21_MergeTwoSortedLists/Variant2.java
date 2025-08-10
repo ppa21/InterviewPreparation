@@ -21,8 +21,6 @@ class Solution {
             if(list.isEmpty() || list.get(list.size() - 1) != minVal) { // not duplicate, then add
                 list.add(minVal);
             }
-
-            list.add(minVal);
             
             if(val1 == minVal) {
                 i++;
