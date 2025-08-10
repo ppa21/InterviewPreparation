@@ -14,7 +14,7 @@ class Solution {
         int[] bounds = levelOrderTraversal(root, colToNodeAndRow);
 
         for (int i = bounds[0]; i <= bounds[1]; i++) {
-            List<Pair<TreeNode, Integer>> column  = colToNodeAndRow.get(i);
+            List<Pair<TreeNode, Integer>> column = colToNodeAndRow.get(i);
             // put sorting here if required i.e. 987. Vertical Order Traversal of a Binary Tree
 
             List<Integer> currCol = new ArrayList<>();
