@@ -4,6 +4,7 @@
  
          * Function: Finds the minimum positive sum of ALL contiguous subarrays whose length 
            is between 'left' and 'right' (inclusive). Returns -1 if no positive sum exists.
+               * Finds the minimum positive sum
 */
 public class Solution {
     public int minPositiveSubarraySum(int[] nums, int left, int right) {
