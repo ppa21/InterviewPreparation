@@ -4,6 +4,7 @@
   
          * Function: Finds the START and END INDEXES of contiguous subarray with minimum positive sum whose length 
            is between 'left' and 'right' (inclusive). Returns {-1, -1} if no positive sum exists.
+               * Finds the start and end indices of that same subarray
  */
 public class Solution {
     public int[] minPositiveSubarrayIndexes(int[] nums, int left, int right) {
