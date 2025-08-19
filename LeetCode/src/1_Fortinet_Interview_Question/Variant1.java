@@ -2,7 +2,7 @@
          * Time Complexity:  O(n * (right - left + 1)) where n = nums.length
          * Space Complexity: O(min subarray length) - for storing the result array
  
-         * Function: Finds the contiguous subarray elements with minimum positive sum whose length 
+         * Function: Finds the contiguous subarray ELEMENTS with minimum positive sum whose length 
            is between 'left' and 'right' (inclusive). Returns empty array if no positive sum exists.
  */
 public class Solution {
