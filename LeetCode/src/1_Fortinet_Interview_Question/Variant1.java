@@ -4,6 +4,7 @@
  
          * Function: Finds the contiguous subarray ELEMENTS with minimum positive sum whose length 
            is between 'left' and 'right' (inclusive). Returns empty array if no positive sum exists.
+               * Finds the contiguous subarray that produces that minimum positive sum
  */
 public class Solution {
     public int[] minPositiveSubarray(int[] nums, int left, int right) {
