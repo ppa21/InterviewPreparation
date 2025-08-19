@@ -2,7 +2,7 @@
          * Time Complexity: O(n * (right - left + 1)) where n = nums.length
          * Space Complexity: O(1) - only uses a few variables
   
-         * Function: Finds the start and end indexes of contiguous subarray with minimum positive sum whose length 
+         * Function: Finds the START and END INDEXES of contiguous subarray with minimum positive sum whose length 
            is between 'left' and 'right' (inclusive). Returns {-1, -1} if no positive sum exists.
  */
 public class Solution {
