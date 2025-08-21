@@ -24,7 +24,10 @@ public class Solution {
             // Check if this sum is positive
             if (sum > 0) {
                 minSum = Math.min(minSum, sum);
-                if (sum == minSum) { bestStart = 0; bestLength = length; }
+                if (sum == minSum) { 
+                    bestStart = 0; 
+                    bestLength = length; 
+                }
                 found = true;
             }
             
@@ -34,7 +37,10 @@ public class Solution {
                 
                 if (sum > 0) {
                     minSum = Math.min(minSum, sum);
-                    if (sum == minSum) { bestStart = i - length + 1; bestLength = length; }
+                    if (sum == minSum) { 
+                        bestStart = i - length + 1; 
+                        bestLength = length; 
+                    }
                     found = true;
                 }
             }
