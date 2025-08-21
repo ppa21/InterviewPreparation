@@ -10,7 +10,7 @@ public class Solution {
     public int[] minPositiveSubarrayIndexes(int[] nums, int left, int right) {
         int minSum = Integer.MAX_VALUE;
         boolean found = false;
-        int start = -1, end = -1;
+        int bestStart = -1, end = -1;
         
         // Outer Loop: Tries every valid window size
         for (int length = left; length <= right; length++) {
@@ -24,7 +24,7 @@ public class Solution {
             // Check if this sum is positive
             if (sum > 0) {
                 minSum = Math.min(minSum, sum);
-                if (sum == minSum) { start = 0; end = length - 1; }
+                if (sum == minSum) { bestStart = 0; end = length - 1; }
                 found = true;
             }
             
@@ -34,12 +34,12 @@ public class Solution {
                 
                 if (sum > 0) {
                     minSum = Math.min(minSum, sum);
-                    if (sum == minSum) { start = i - length + 1; end = i; }
+                    if (sum == minSum) { bestStart = i - length + 1; end = i; }
                     found = true;
                 }
             }
         }
         
-        return found ? new int[]{start, end} : new int[]{-1, -1};
+        return found ? new int[]{bestStart, end} : new int[]{-1, -1};
     }
 }
