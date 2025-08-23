@@ -48,7 +48,7 @@ class SparseVectorVariant {
             if (indexToVal.get(mid)[0] == targetIndex) {
                 return indexToVal.get(mid)[1];
             }
-            if (indexToVal.get(mid)[0] < targetIndex) {
+            if (targetIndex > indexToVal.get(mid)[0]) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
