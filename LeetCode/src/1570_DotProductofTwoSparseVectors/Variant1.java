@@ -45,7 +45,7 @@ class SparseVectorVariant {
         
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (indexToVal.get(mid)[0] == targetIndex) {
+            if (targetIndex == indexToVal.get(mid)[0]) {
                 return indexToVal.get(mid)[1];
             }
             if (targetIndex > indexToVal.get(mid)[0]) {
