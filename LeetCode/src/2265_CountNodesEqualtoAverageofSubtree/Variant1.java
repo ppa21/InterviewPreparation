@@ -14,26 +14,6 @@
  * }
  */
 
- /*
-        * time complexity  = O(n); n = nodes
-        * space complexity = O(h); h = height of the tree due to recursion stack
- */
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-
   /*
         * time complexity  = O(n); n = nodes
         * space complexity = O(h); h = height of the tree due to recursion stack
