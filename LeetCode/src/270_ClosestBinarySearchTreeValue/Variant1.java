@@ -37,10 +37,10 @@ class Solution {
                 return root.val;
             }
             
-            if (root.val > target) {
-                root = root.left;
-            } else {
+            if (target > root.val) {
                 root = root.right;
+            } else {
+                root = root.left;
             }
         }
         
