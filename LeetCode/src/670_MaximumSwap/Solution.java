@@ -24,7 +24,7 @@ class Solution {
                     digits[i] = digits[rightmostIndex[digit]];
                     digits[rightmostIndex[digit]] = temp;
                     
-                    return Integer.parseInt(new String(digits));
+                    return Integer.parseInt(new String(digits));       // Integer.value(new String(digits))
                 }
             }
         }
