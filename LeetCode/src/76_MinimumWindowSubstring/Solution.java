@@ -14,8 +14,7 @@ class Solution {
         }
 
         Map<Character, Integer> map = new HashMap();    // think of map as a SHOPPING LIST <item, count of item needed>
-        for(int i = 0; i < t.length(); i++) {
-            char c = t.charAt(i);
+        for(char c : t.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
