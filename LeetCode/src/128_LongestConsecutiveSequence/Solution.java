@@ -57,7 +57,7 @@ class Solution {
 
         int result = 0;
 
-        for(int n : nums) {
+        for(int n : set) {                // iterate over SET instead of NUMS to avoid DUPLICATES
             if(!set.contains(n - 1)) {
                 int length = 1;
 
