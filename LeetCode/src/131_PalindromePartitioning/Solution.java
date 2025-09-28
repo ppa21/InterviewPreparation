@@ -18,7 +18,7 @@ class Solution {
         */
         for (int i = 0; i < s.length(); i++) {
             // check if substring from START to CURRENT letter is a palindrom
-            if (isPalindrome(s, i + 1)) {
+            if (isPalindrome(s.substring(0, i + 1))) {
                 // if it is, we find palindromic partitions for the remaining part of the string 
                 for (List<String> list : partition(s.substring(i + 1, s.length()))) {
                     // we add current palindrome substring to the BEGINNING of each partition found
@@ -31,9 +31,9 @@ class Solution {
         return result;
     }
 
-    private boolean isPalindrome(String s, int n) {
-        for (int i = 0; i < n / 2; i++) {
-            if (s.charAt(i) != s.charAt(n - i - 1)) {
+    private boolean isPalindrome(String s) {
+        for (int i = 0; i < s.length() / 2; i++) {
+            if (s.charAt(i) != s.charAt(s.length() - i - 1)) {
                 return false;
             }
         }
